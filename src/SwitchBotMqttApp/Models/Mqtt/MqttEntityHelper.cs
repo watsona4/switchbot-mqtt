@@ -100,6 +100,24 @@ public static class MqttEntityHelper
         );
     }
 
+    public static ClimateConfig CreateCommandParamClimateEntity(DeviceBase deviceConf, int commandIndex, CommandConfig command, DeviceMqtt deviceMqtt, CommandPayloadDefinition paramDef, string defaultValue)
+    {
+        return new ClimateConfig(
+            deviceMqtt
+            , defaultValue: defaultValue
+            , objectId: GetCommandParamObjectId(deviceConf.DeviceId, commandIndex, paramDef.Name)
+            , commandTopic: GetCommandTopic(deviceConf.DeviceId)
+            , commandTemplate: GetCommandTemplate(command, paramDef.Name, paramDef.ParameterType)
+            , name: paramDef.Name
+            , modes: paramDef.GetOptions()
+            , fanModes: paramDef.GetOptionsDescription()
+            , minTemp: paramDef.RangeMin
+            , maxTemp: paramDef.RangeMax
+            , temperatureUnit: paramDef.UnitOfMeasurement
+            , initial: paramDef.DefaultValue
+        );
+    }
+
     public static ButtonConfig CreateCommandButtonEntity(DeviceMqtt deviceMqtt, DeviceBase deviceConf, int commandIndex, CommandConfig command, CommandDefinition commandDef)
     {
         return new ButtonConfig(

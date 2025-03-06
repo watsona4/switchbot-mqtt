@@ -80,6 +80,7 @@ AirConditioner,Command,setAll,temperature,,1,"the unit of temperature is in cels
 AirConditioner,Command,setAll,mode,,2,"modes include 1 (auto), 2 (cool), 3 (dry), 4 (fan), 5 (heat)",Select,mdi:cogs,1|2|3|4|5,auto|cool|dry|fan|heat,,,,,,,,1,,
 AirConditioner,Command,setAll,fanspeed,,3,"fan speed includes 1 (auto), 2 (low), 3 (medium), 4 (high)",Select,mdi:fan,1|2|3|4,auto|low|medium|high,,,,,,,,1,,
 AirConditioner,Command,setAll,powerState,,4,"power state includes on and off",Select,mdi:power,on|off,on|off,,,,,,,,on,,
+AirConditioner,Command,setAll,climate,,5,"climate entity for air conditioner",Climate,,auto|cool|dry|fan|heat,auto|low|medium|high,,16,30,,°C,,,25,,
 TV,Command,SetChannel,channelNumber,,1,"set the TV channel to switch to",String,mdi:numeric,,,,,,,,,,1,,
 IPTV,Command,SetChannel,channelNumber,,1,"set the TV channel to switch to",String,mdi:numeric,,,,,,,,,,1,,
 SetTopBox,Command,SetChannel,channelNumber,,1,"set the TV channel to switch to",String,mdi:numeric,,,,,,,,,,1,,
